@@ -8,6 +8,10 @@ const actionsDb = require('./data/helpers/actionModel')
 
 middleware(server)
 
+server.get('/' , (req,res)=>{
+    res.send('<h1>built by Ryan Clausen</h1>')
+})
+
 server.use('/projects', routeMaker(projectDb, 'project'))
 server.use('/actions', routeMaker(actionsDb, 'action'))
 server.listen(port, () => console.log(`we hear you ${port}`));
