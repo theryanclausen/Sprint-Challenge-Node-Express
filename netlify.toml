@@ -1,0 +1,8 @@
+[Settings]
+ID = "Sprint Challenge Backend 1"
+
+[build]
+
+  base    = "./client"
+  publish = "./client/build"
+  command = "yarn build"
