@@ -69,7 +69,27 @@ module.exports = (db, resource) => {
           res.status(201).json(updatedItem)
       }
       catch(err){
-          sendError(500, `${resource} could not be altered`)
+          sendError(500, `${resource} could not be altered.`, res)
+      }
+  })
+
+  route.delete('/:id', async (req,res)=>{
+      try{
+          const {id} = req.params;
+          const item = await db.get(id);
+          if (!item){
+              sendError(400, `No ${resource} at that id.`, res)
+              return
+          }
+          const count = await db.remove(id)
+          if (count){
+              res.status(200).json({"deleted": item})
+          }
+          
+
+      }
+      catch(err){
+          sendError(500, `${resource} could not be removed.`, res )
       }
   })
 
