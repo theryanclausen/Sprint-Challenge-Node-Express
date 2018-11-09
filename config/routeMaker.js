@@ -57,5 +57,21 @@ module.exports = (db, resource) => {
       }
   })
 
+  route.put('/:id', async (req, res) =>{
+      try{
+          const {id} = req.params;
+          const body = req.body;
+          const count = await db.update(id, body)
+          if (!count){
+              sendError(400, `${resource} was not altered`)
+          }
+          const updatedItem = await db.get(id)
+          res.status(201).json(updatedItem)
+      }
+      catch(err){
+          sendError(500, `${resource} could not be altered`)
+      }
+  })
+
   return route;
 };
