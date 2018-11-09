@@ -1,5 +1,5 @@
 {
-  "name": "Sprint-Challenge-Node-Express",
+  "name": "sprint-challenge-node-express",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/theryanclausen/Sprint-Challenge-Node-Express.git",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "server": "nodemon",
-    "start": "node"
+    "start": "node index.js"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"

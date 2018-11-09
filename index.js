@@ -16,4 +16,4 @@ server.use('/projects', routeMaker(projectDb, 'project'))
 server.use('/actions', routeMaker(actionsDb, 'action'))
 //server.listen(port, () => console.log(`we hear you ${port}`));
 
-server.listen(process.env.PORT || 3334, () => { console.log('we up;'); }); 
+server.listen(process.env.PORT || 3334, () => { console.log('we hear you'); }); 
